@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronograma de Viagem - São Paulo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2b6cb0;
+            --primary-light: #ebf8ff;
+            --secondary: #718096;
+            --accent: #f6ad55;
+            --background: #f7fafc;
+            --text: #2d3748;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --hover-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary), #4299e1);
+            border-radius: 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%);
+            background-size: 3px 3px;
+            pointer-events: none;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: var(--hover-shadow);
+            transform: translateY(-2px);
+        }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .card-title i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-right: 1rem;
+        }
+
+        .card-title h2 {
+            font-size: 1.5rem;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .schedule-item {
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: var(--primary-light);
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary);
+            transition: transform 0.2s ease;
+        }
+
+        .schedule-item:hover {
+            transform: translateX(5px);
+        }
+
+        .schedule-item h3 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .schedule-item p {
+            color: var(--secondary);
+            font-size: 0.95rem;
+        }
+
+        .weather-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border);
+        }
+
+        .weather-day {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .weather-day:last-child {
+            border-bottom: none;
+        }
+
+        .weather-icon {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .weather-info h4 {
+            color: var(--text);
+            margin-bottom: 0.3rem;
+        }
+
+        .weather-info p {
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        .weather-alert {
+            background: var(--primary-light);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Ano Novo</h1>
+            <p>São Paulo • 31 de Dezembro - 01 de Janeiro</p>
+        </header>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-title">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h2>Cronograma Reveillon</h2>
+                </div>
+                
+                <div class="schedule-item">
+                    <h3>Saída de Americana City</h3>
+                    <p><i class="far fa-clock"></i> 31/12 - 14:00</p>
+                    <p><i class="far fa-hourglass"></i> Duração: 30 minutos</p>
+                </div>
+
+                <div class="schedule-item">
+                    <h3>Chegada em São Paulo</h3>
+                    <p><i class="far fa-clock"></i> 31/12 - 16:30</p>
+                    <p><i class="far fa-hourglass"></i> Duração: 45 minutos</p>
+                </div>
+
+                <div class="schedule-item">
+                    <h3>Check-in Hotel</h3>
+                    <p><i class="far fa-clock"></i> 31/12 - 18:00</p>
+                    <p><i class="far fa-hourglass"></i> Duração: 30 minutos</p>
+                </div>
+
+                <div class="schedule-item">
+                    <h3>Check-out Hotel</h3>
+                    <p><i class="far fa-clock"></i> 01/01 - 12:00</p>
+                    <p><i class="far fa-hourglass"></i> Duração: 30 minutos</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    <i class="fas fa-cloud-sun"></i>
+                    <h2>Previsão do Tempo</h2>
+                </div>
+
+                <div class="weather-day">
+                    <div class="weather-info">
+                        <h4>31 de Dezembro</h4>
+                        <p>44°C / 41°C</p>
+                        <p>Probabilidade da previsão do tempo dizer que o céu fechou: 30%</p>
+                    </div>
+                    <i class="fas fa-cloud-sun weather-icon"></i>
+                </div>
+
+                <div class="weather-day">
+                    <div class="weather-info">
+                        <h4>01 de Janeiro</h4>
+                        <p>-27°C / -19°C</p>
+                        <p>Chance que o poder da vitória vai curar a dor: 60%</p>
+                    </div>
+                    <i class="fas fa-cloud-rain weather-icon"></i>
+                </div>
+
+                <div class="weather-alert">
+                    <p>Recomendação: O André parar de ser puta.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
